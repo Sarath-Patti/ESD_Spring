@@ -2,7 +2,8 @@ package com.prashantjain.yummyrest.service;
 
 import com.prashantjain.yummyrest.dto.CustomerRequest;
 import com.prashantjain.yummyrest.dto.CustomerResponse;
-import com.prashantjain.yummyrest.dto.Login;
+import com.prashantjain.yummyrest.dto.LoginRequest;
+import com.prashantjain.yummyrest.dto.LoginRequest;
 import com.prashantjain.yummyrest.entity.Customer;
 import com.prashantjain.yummyrest.mapper.CustomerMapper;
 import com.prashantjain.yummyrest.repo.CustomerRepo;
@@ -23,7 +24,7 @@ public class CustomerService {
         return "Created";
     }
 
-    public String loginCustomer(@Valid Login request) {
+    public String loginCustomer(@Valid LoginRequest request) {
         Customer customer=mapper.loginEntity(request);
         Customer customer1=repo.findByEmail(customer.getEmail());
         if(customer.getPassword().equals(customer1.getPassword())) {

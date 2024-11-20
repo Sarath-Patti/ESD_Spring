@@ -1,7 +1,7 @@
 package com.prashantjain.yummyrest.mapper;
 
 import com.prashantjain.yummyrest.dto.CustomerRequest;
-import com.prashantjain.yummyrest.dto.Login;
+import com.prashantjain.yummyrest.dto.LoginRequest;
 import com.prashantjain.yummyrest.entity.Customer;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class CustomerMapper {
                 .password(request.password())
                 .build();
     }
-    public Customer loginEntity(Login request) {
+    public Customer loginEntity(LoginRequest request) {
         return Customer.builder()
 
                 .email(request.email())

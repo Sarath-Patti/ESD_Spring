@@ -1,7 +1,8 @@
 package com.prashantjain.yummyrest.controller;
 
 import com.prashantjain.yummyrest.dto.CustomerRequest;
-import com.prashantjain.yummyrest.dto.Login;
+import com.prashantjain.yummyrest.dto.LoginRequest;
+
 import com.prashantjain.yummyrest.service.CustomerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,11 +20,11 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<String> createCustoemr(@RequestBody @Valid CustomerRequest request) {
+    public ResponseEntity<String> createCustomer(@RequestBody @Valid CustomerRequest request) {
         return ResponseEntity.ok(customerService.createCustomer(request));
     }
     @PostMapping("/login")
-    public ResponseEntity<String> loginCustomer(@RequestBody @Valid Login request) {
+    public ResponseEntity<String> loginCustomer(@RequestBody @Valid LoginRequest request) {
         return ResponseEntity.ok(customerService.loginCustomer(request));
     }
 

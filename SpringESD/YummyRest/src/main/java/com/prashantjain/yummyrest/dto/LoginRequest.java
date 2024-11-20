@@ -3,7 +3,7 @@ package com.prashantjain.yummyrest.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 
-public record Login(
+public record LoginRequest(
         @NotNull(message="Customer email is required")
         @Email(message = "Email must be in correct format")
         @JsonProperty("email")
